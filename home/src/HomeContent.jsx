@@ -19,6 +19,7 @@ export default function HomeContent() {
             <a>{product.name}</a>
           </div>
           <div className="flex-end">{currency.format(product.price)}</div>
+          <div className="text-sm mt-4">{product.description}</div>
         </div>
       ))}
     </div>
