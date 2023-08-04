@@ -2,7 +2,7 @@ import { BehaviorSubject } from "rxjs";
 
 const API_SERVER = "http://localhost:8080";
 
-export const jwt = new BehaviorSubject(null)
+export const jwt = new BehaviorSubject(null);
 
 export const login = (username, password) => {
   fetch(`${API_SERVER}/auth/login`, {
@@ -16,8 +16,8 @@ export const login = (username, password) => {
     }),
   })
     .then((res) => res.json())
-    .then((res) => {
-      jwt.next(data.access.token)
-      return data.access.token;
-    })
-}
+    .then((data) => {
+      jwt.next(data.access_token);
+      return data.access_token;
+    });
+};
